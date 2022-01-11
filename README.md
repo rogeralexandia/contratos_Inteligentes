@@ -5,6 +5,28 @@ Este proyecto inicio desde el año 2019 para los siguientes cursos de mi canal d
 - [Curso de Python con Django de 0 a Máster | Español](https://youtube.com/playlist?list=PLxm9hnvxnn-j5ZDOgQS63UIBxQytPdCG7 "Curso de Python con Django de 0 a Máster | Español")
 - [Curso de Deploy de un Proyecto Django en un VPS Ubuntu | Español](https://youtube.com/playlist?list=PLxm9hnvxnn-hFNSoNrWM0LalFnSv5oMas "Curso de Deploy de un Proyecto Django en un VPS Ubuntu | Español")
 
+# Instaladores
+
+##### 1) Compilador
+
+- [Python3](https://www.python.org/downloads/release/python-396/ "Python3")
+
+##### 2) IDE
+
+- [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
+- [Sublime Text](https://www.sublimetext.com/ "Sublime Text")
+- [Pycharm](https://www.jetbrains.com/es-es/pycharm/download/#section=windows "Pycharm")
+
+##### 3) Motor de base de datos
+
+- [Sqlite Studio](https://github.com/pawelsalawa/sqlitestudio/releases "Sqlite Studio")
+- [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads "PostgreSQL")
+- [MySQL](https://www.apachefriends.org/es/index.html "MySQL")
+
+##### 4 Repositorios
+
+- [Git](https://git-scm.com/downloads "Git")
+
 # Instalación
 
 ##### 1) Clonar o descargar el proyecto del repositorio
