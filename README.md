@@ -52,13 +52,16 @@ Este proyecto inicio desde el año 2019 para los siguientes cursos de mi canal d
 
 - `pip install -r deploy/requirements.txt`
 
-##### 6) Crear la base de datos con las migraciones y el superuser para iniciar sesión.
+##### 6) Crear la base de datos con las migraciones y el superuser para iniciar sesión
 
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 - `python manage.py createsuperuser`
 
+##### 7) Insertar información inicial en la base de datos
 
+- `python manage.py shell`
+- `from core.utilities import *`
 
 ------------
 
