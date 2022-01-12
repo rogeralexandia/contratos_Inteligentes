@@ -1,4 +1,4 @@
-# Bienvendos al repositorio oficial de AlgoriSoft
+# Bienvenidos al repositorio oficial de AlgoriSoft
 
 Este proyecto inicio desde el año 2019 para los siguientes cursos de mi canal de [Youtube](https://www.youtube.com/c/AlgoriSoft "Youtube"):
 
