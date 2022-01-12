@@ -23,7 +23,7 @@ Este proyecto inicio desde el año 2019 para los siguientes cursos de mi canal d
 - [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads "PostgreSQL")
 - [MySQL](https://www.apachefriends.org/es/index.html "MySQL")
 
-##### 4 Repositorios
+##### 4) Repositorios
 
 - [Git](https://git-scm.com/downloads "Git")
 
@@ -31,7 +31,7 @@ Este proyecto inicio desde el año 2019 para los siguientes cursos de mi canal d
 
 ##### 1) Clonar o descargar el proyecto del repositorio
 
-`git clone https://gitlab.com/tutorship/apolo.git`
+`git clone https://gitlab.com/wdavilav/apolo.git`
 
 ##### 2) Crear un entorno virtual para posteriormente instalar las librerias del proyecto
 
