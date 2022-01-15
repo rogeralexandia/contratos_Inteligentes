@@ -60,6 +60,7 @@ class SaleCreateView(ExistsCompanyMixin, ValidatePermissionRequiredMixin, Create
     form_class = SaleForm
     template_name = 'sale/create.html'
     success_url = reverse_lazy('sale_list')
+    url_redirect = success_url
     permission_required = 'add_sale'
 
     def post(self, request, *args, **kwargs):
@@ -142,6 +143,7 @@ class SaleUpdateView(ExistsCompanyMixin, ValidatePermissionRequiredMixin, Update
     form_class = SaleForm
     template_name = 'sale/create.html'
     success_url = reverse_lazy('sale_list')
+    url_redirect = success_url
     permission_required = 'change_sale'
 
     def get_form(self, form_class=None):
@@ -242,6 +244,7 @@ class SaleDeleteView(ExistsCompanyMixin, ValidatePermissionRequiredMixin, Delete
     model = Sale
     template_name = 'sale/delete.html'
     success_url = reverse_lazy('sale_list')
+    url_redirect = success_url
     permission_required = 'delete_sale'
 
     def dispatch(self, request, *args, **kwargs):
