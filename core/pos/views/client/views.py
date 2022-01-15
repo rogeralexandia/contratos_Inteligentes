@@ -41,7 +41,6 @@ class ClientCreateView(ValidatePermissionRequiredMixin, CreateView):
     template_name = 'client/create.html'
     success_url = reverse_lazy('client_list')
     permission_required = 'add_client'
-    url_redirect = success_url
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -71,7 +70,6 @@ class ClientUpdateView(ValidatePermissionRequiredMixin, UpdateView):
     template_name = 'client/create.html'
     success_url = reverse_lazy('client_list')
     permission_required = 'change_client'
-    url_redirect = success_url
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -104,7 +102,6 @@ class ClientDeleteView(ValidatePermissionRequiredMixin, DeleteView):
     template_name = 'client/delete.html'
     success_url = reverse_lazy('client_list')
     permission_required = 'delete_client'
-    url_redirect = success_url
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
