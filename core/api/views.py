@@ -1,7 +1,9 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from core.api.serializers import *
 from core.pos.models import Category, Product
 
@@ -9,6 +11,7 @@ from core.pos.models import Category, Product
 class CategoryListAPIView(ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializers
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     # def get_queryset(self):
