@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
 
 from core.api.serializers import *
@@ -37,3 +37,22 @@ class CategoryCreateAPIView(CreateAPIView):
     def post(self, request, *args, **kwargs):
         print(self.request.data)
         return self.create(request, *args, **kwargs)
+
+
+class CategoryUpdateAPIView(UpdateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializers
+
+    def put(self, request, *args, **kwargs):
+        print(self.request.data)
+        return self.update(request, *args, **kwargs)
+
+
+class CategoryDestroyAPIView(DestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializers
+
+    def delete(self, request, *args, **kwargs):
+        instance = self.queryset.get(pk=self.kwargs['pk'])
+        instance.delete()
+        return Response({'msg': f"Se ha eliminado correctamente el pk {self.kwargs['pk']}"})
