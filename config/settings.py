@@ -162,3 +162,10 @@ EMAIL_HOST_USER = 'djangologin99@gmail.com'
 EMAIL_HOST_PASSWORD = '0m4gATi3rr@'
 
 DOMAIN = ''
+
+# django rest framework
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 5
+}
