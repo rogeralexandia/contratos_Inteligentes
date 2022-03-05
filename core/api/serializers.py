@@ -6,7 +6,7 @@ from core.pos.models import Category, Product
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = 'id', 'name'
+        fields = '__all__'
 
 
 class ProductSerializers(serializers.ModelSerializer):

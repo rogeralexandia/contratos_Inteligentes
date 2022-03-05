@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework.response import Response
 
 from core.api.serializers import *
@@ -31,3 +31,9 @@ class ProductListAPIView(ListAPIView):
     serializer_class = ProductSerializers
 
 
+class CategoryCreateAPIView(CreateAPIView):
+    serializer_class = CategorySerializers
+
+    def post(self, request, *args, **kwargs):
+        print(self.request.data)
+        return self.create(request, *args, **kwargs)
