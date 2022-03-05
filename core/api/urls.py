@@ -1,5 +1,6 @@
 from django.urls import path
 from core.api.views import *
+from core.api.routers import router
 
 urlpatterns = [
     path('category/', CategoryAPIView.as_view(), name='api_category'),
@@ -9,3 +10,5 @@ urlpatterns = [
     path('category/delete/<int:pk>/', CategoryDestroyAPIView.as_view(), name='api_category_delete'),
     path('product/list/', ProductListAPIView.as_view(), name='api_product_list'),
 ]
+
+urlpatterns += router.urls

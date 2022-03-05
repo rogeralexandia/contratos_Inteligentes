@@ -3,9 +3,18 @@ from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, D
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
 
 from core.api.serializers import *
-from core.pos.models import Category, Product
+from core.pos.models import Category, Product, Client
+
+
+class ClientViewSet(ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializers
+
+    def list(self, request, *args, **kwargs):
+        return Response({'id': 4})
 
 
 class CategoryListAPIView(ListAPIView):
