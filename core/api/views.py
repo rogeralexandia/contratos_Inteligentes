@@ -1,8 +1,8 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 
-from core.api.serializers import CategorySerializers
-from core.pos.models import Category
+from core.api.serializers import *
+from core.pos.models import Category, Product
 
 
 class CategoryListAPIView(ListAPIView):
@@ -24,3 +24,10 @@ class CategoryListAPIView(ListAPIView):
         serializer = self.serializer_class(self.queryset.all(), many=True)
         # return self.list(request, *args, **kwargs)
         return Response(serializer.data)
+
+
+class ProductListAPIView(ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializers
+
+
