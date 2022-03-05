@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
-
+from rest_framework.views import APIView
 from core.api.serializers import *
 from core.pos.models import Category, Product
 
@@ -56,3 +56,15 @@ class CategoryDestroyAPIView(DestroyAPIView):
         instance = self.queryset.get(pk=self.kwargs['pk'])
         instance.delete()
         return Response({'msg': f"Se ha eliminado correctamente el pk {self.kwargs['pk']}"})
+
+
+class CategoryAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        print(self.request.query_params)
+        return Response({'resp': False})
+
+    def post(self, request, *args, **kwargs):
+        queryset = Category.objects.all()
+        # serializer = CategorySerializers(queryset, many=True)
+        serializer = [i.toJSON() for i in queryset]
+        return Response(serializer)
