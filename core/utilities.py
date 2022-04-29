@@ -3,7 +3,6 @@ from random import randint
 
 from config import wsgi
 import json
-from config import settings
 from core.pos.models import *
 
 
