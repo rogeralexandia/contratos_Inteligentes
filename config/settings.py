@@ -173,3 +173,5 @@ REST_FRAMEWORK = {
 # System settings
 
 DOMAIN = ''
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
