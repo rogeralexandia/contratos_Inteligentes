@@ -1,9 +1,7 @@
 var input_is_inventoried;
-var form_group;
 
 $(function () {
     input_is_inventoried = $('input[name="is_inventoried"]');
-    form_group = document.getElementsByClassName('form-group');
 
     $('.select2').select2({
         theme: "bootstrap4",
@@ -37,9 +35,10 @@ $(function () {
         });
 
     input_is_inventoried.on('change', function () {
-        $(form_group[4]).show();
+        var container = $(this).parent().parent().find('input[name="stock"]').parent().parent();
+        $(container).show();
         if (!this.checked) {
-            $(form_group[4]).hide();
+            $(container).hide();
         }
     });
 
