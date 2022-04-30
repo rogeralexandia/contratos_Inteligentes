@@ -42,10 +42,10 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     'core.login',
-    'core.pos',
     'core.reports',
     'core.user',
     'core.homepage',
+    'core.pos',
 ]
 
 THIRD_PARTY_APPS = [
