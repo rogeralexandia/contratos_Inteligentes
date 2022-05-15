@@ -1,7 +1,37 @@
 from django import forms
-
+from django.contrib.auth import authenticate
 from core.user.models import User
 
+
+class AuthenticationForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Ingrese un username',
+        'class': 'form-control',
+        'autocomplete': 'off'
+    }))
+
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
+        'placeholder': 'Ingrese un password',
+        'class': 'form-control',
+        'autocomplete': 'off'
+    }))
+
+    def clean(self):
+        cleaned = super().clean()
+        username = cleaned.get('username', '')
+        password = cleaned.get('password', '')
+        if len(username) == 0:
+            raise forms.ValidationError('Ingrese su username')
+        elif len(password) == 0:
+            raise forms.ValidationError('Ingrese su password')
+        user = authenticate(username=username, password=password)
+        if user is None:
+            raise forms.ValidationError('Por favor introduzca el nombre de usuario y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.')
+        return cleaned
+
+    def get_user(self):
+        username = self.cleaned_data.get('username')
+        return User.objects.get(username=username)
 
 class ResetPasswordForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={
