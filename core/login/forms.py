@@ -54,12 +54,12 @@ class AuthenticationForm(forms.Form):
             raise forms.ValidationError('Ingrese su username')
         elif len(password) == 0:
             raise forms.ValidationError('Ingrese su password')
-        response_api = self.get_or_create_user_api(username=username, password=password)
-        if not response_api.get('resp'):
-            raise forms.ValidationError(response_api.get('msg'))
-        # user = authenticate(username=username, password=password)
-        # if user is None:
-        #     raise forms.ValidationError('Por favor introduzca el nombre de usuario y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.')
+        # response_api = self.get_or_create_user_api(username=username, password=password)
+        # if not response_api.get('resp'):
+        #     raise forms.ValidationError(response_api.get('msg'))
+        user = authenticate(username=username, password=password)
+        if user is None:
+            raise forms.ValidationError('Por favor introduzca el nombre de usuario y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.')
         return cleaned
 
     def get_user(self):
