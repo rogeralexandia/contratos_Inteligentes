@@ -16,6 +16,7 @@ from django.views.generic import FormView, RedirectView
 
 from config import settings
 from core.login.forms import ResetPasswordForm, ChangePasswordForm, AuthenticationForm
+from core.security.models import AccessUsers
 from core.user.models import User
 
 
@@ -31,6 +32,7 @@ class LoginFormView(FormView):
 
     def form_valid(self, form):
         login(self.request, user=form.get_user())
+        AccessUsers(user=form.get_user()).save()
         return super(LoginFormView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):

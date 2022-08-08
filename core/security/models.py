@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from crum import get_current_request
 from django.db import models
 from django.forms import model_to_dict
 
@@ -21,6 +22,15 @@ class AccessUsers(models.Model):
         item['date_joined'] = self.date_joined.strftime('%Y-%m-%d')
         item['time_joined'] = self.time_joined.strftime('%H:%M:%S')
         return item
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        try:
+            request = get_current_request()
+            self.ip_address = request.META['REMOTE_ADDR']
+        except:
+            pass
+        super(AccessUsers, self).save()
 
     class Meta:
         verbose_name = 'Acceso de Usuario'
