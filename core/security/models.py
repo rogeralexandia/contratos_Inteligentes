@@ -19,7 +19,7 @@ class AccessUsers(models.Model):
         item = model_to_dict(self)
         item['user'] = self.user.toJSON()
         item['date_joined'] = self.date_joined.strftime('%Y-%m-%d')
-        item['time_joined'] = self.time_joined.strftime('%H-%M-%S')
+        item['time_joined'] = self.time_joined.strftime('%H:%M:%S')
         return item
 
     class Meta:
