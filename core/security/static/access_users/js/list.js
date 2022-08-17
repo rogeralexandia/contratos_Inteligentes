@@ -32,10 +32,22 @@ var access_users = {
                 {"data": "date_joined"},
                 {"data": "time_joined"},
                 {"data": "ip_address"},
+                {"data": "type.id"},
                 {"data": "id"},
             ],
             order: [[2, "desc"], [3, "desc"]],
             columnDefs: [
+                {
+                    targets: [-2],
+                    class: 'text-center',
+                    render: function (data, type, row) {
+                        var name = row.type.name;
+                        if (row.type.id === 'success') {
+                            return '<span class="badge badge-success badge-pill">' + name + '</span>';
+                        }
+                        return '<span class="badge badge-danger badge-pill">' + name + '</span>';
+                    }
+                },
                 {
                     targets: [-1],
                     class: 'text-center',
